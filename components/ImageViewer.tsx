@@ -1,22 +1,20 @@
 import { Image } from "expo-image";
-import { ImageSourcePropType, StyleSheet, View } from "react-native";
+import { ImageSourcePropType, StyleSheet } from "react-native";
+
+const PlaceholderImage = require("@/assets/images/background-image.png");
 
 type Props = {
   ImgSource: ImageSourcePropType;
 };
 
 export default function ImageViewer({ ImgSource }: Props) {
-  return (
-    // Agregamos un View que use el imageContainer para darle tamaño
-    <View style={styles.imageContainer}>
-      <Image source={ImgSource} style={styles.image} />
-    </View>
-  );
+  return <Image source={ImgSource} style={styles.image} />;
 }
 
 const styles = StyleSheet.create({
   image: {
     width: "100%",
+
     height: "100%",
   },
   imageContainer: {
